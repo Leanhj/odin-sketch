@@ -12,3 +12,10 @@ body {
 .row {
     display: flex;
 }
+
+.square-filled {
+    background-color: black;
+    border: solid black;
+    width: 32px;
+    height: 32px;
+}
