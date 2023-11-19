@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.square {
+    border: solid black;
+    width: 32px;
+    height: 32px;
+}
+
+.row {
+    display: flex;
+}
