@@ -3,19 +3,26 @@ body {
     justify-content: center;
 }
 
+.canvas-container {
+    width: 512px;
+    height: 512px;
+    border: 2px solid black;
+}
+
 .square {
-    border: solid black;
-    width: 32px;
-    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .row {
     display: flex;
+    justify-content: stretch;
 }
 
 .square-filled {
     background-color: black;
-    border: solid black;
-    width: 32px;
-    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
