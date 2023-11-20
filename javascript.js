@@ -4,7 +4,11 @@ let userSize = 0;
 const body = document.querySelector("body");
 
 const buttonDiv = document.createElement("div");
+buttonDiv.className = "button-div";
+
 const button = document.createElement("button");
+button.textContent = "Change size";
+button.className = "button";
 buttonDiv.appendChild(button);
 
 const mainDiv = document.createElement("div");
@@ -64,16 +68,25 @@ function gridAddEvents() {
     squareDivs.forEach(function(item) {
         item.addEventListener("mouseover", function() {
             item.className = "square-filled";
+            item.style.backgroundColor = randomColor();
             item.style.height = CANVAS_SIZE/userSize + "px";
             item.style.width = CANVAS_SIZE/userSize + "px";
         });
     });
 }
 
+function randomColor() {
+    return "#" + Math.floor(Math.random()*16777215).toString(16);
+}
+
 createGrid(16);
 
 button.addEventListener("click", () => {
     newSize = prompt("Input canvas size", 16);
-    updateGrid(parseInt(newSize));
-    gridAddEvents();
+    if (newSize <= 100) {
+        updateGrid(parseInt(newSize));
+        gridAddEvents();
+    } else {
+        alert("Please enter a number below 100");
+    }
 });
